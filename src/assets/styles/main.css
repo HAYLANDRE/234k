@@ -1,0 +1,69 @@
+:root {
+    --color-bg: #0a0a0a;
+    --color-bg-light: #1a0a0a;
+    --color-blood: #8b0000;
+    --color-crimson: #c41e3a;
+    --color-gold: #d4af37;
+    --color-parchment: #f4e4c1;
+    --color-ink: #2c1810;
+    --color-shojo-skin: #ffb7c5;
+    --color-shojo-hair: #ff4500;
+    --color-oni: #4a0000;
+    --color-baku: #4a4a4a;
+    
+    --font-title: 'Cinzel', serif;
+    --font-jp: 'Noto Serif JP', serif;
+    --font-body: 'Noto Serif JP', serif;
+  }
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    background: var(--color-bg);
+    color: var(--color-parchment);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  #app { min-height: 100vh; display: flex; flex-direction: column; }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+  
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 0 5px var(--color-crimson); }
+    50% { box-shadow: 0 0 20px var(--color-crimson), 0 0 40px var(--color-blood); }
+  }
+  
+  .animate-fade-in { animation: fadeIn 0.6s ease-out; }
+  .animate-pulse { animation: pulse 2s infinite; }
+  .animate-shake { animation: shake 0.5s ease-in-out; }
+  .animate-float { animation: float 3s ease-in-out infinite; }
+  
+  .paper-texture {
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+  }
+  
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: var(--color-bg); }
+  ::-webkit-scrollbar-thumb { background: var(--color-blood); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--color-crimson); }
